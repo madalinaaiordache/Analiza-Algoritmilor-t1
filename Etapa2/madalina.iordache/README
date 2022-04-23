@@ -1,0 +1,65 @@
+IORDACHE Madalina Gabriela
+323CA
+
+* **algo.h**
+    * A minimal set of functions which resolves the chosen problem.
+    
+* algo.cpp
+    * Contains the most efficient implementation of the functions defined in algo.h    
+    
+* **Makefile **
+    * make build -> will generate an object file from algo.cpp
+    * make run -> will generate an executable of the best implementation (algo.cpp),
+        then it will test all the files from in
+    * make bellman_ford -> will generate an executable which will test the implementation
+        of the bellman_ford algorithm.
+    * make djikstra -> will generate an executable which will test the implementation
+        of the djikstra algorithm.
+    * make floyd_warshall -> will generate an executable which will test the implementation
+        of the floyd_warshall algorithm. 
+    * make generator -> makes an executable that will generate input tests  
+
+
+* Folder **'in'** (10 tests)
+    * On the first line there are n (numbers of vertices of a graph) and m (number of edges)
+    * On the next m lines there are the source vertix, the destination vertix and the cost
+        of the edge between them.
+      
+* Folder **'out'**
+    * Contains the adjacency matrix with the minimum distances between the vertices
+    * (A[i][j] - minimum distance from i to j, **inf** if there is no way from i to j)
+        
+* Folder **'other_tests'**
+    * It tests if there are negative cycles in the input of floyd_warshall and bellman_ford algorithm
+    * Tests if there are negative cost edges for djikstra
+    * If the input is wrong it displays 'wrong input'
+    * If you want to test the tests, copy the test into the 'in' file and modify the Makefile
+    * In Makefile you need to add the test number in every 'for'
+
+
+* generator.cpp
+    * Generates 10 random input files
+
+* tester.cpp
+    * It takes the input and calls the shortest_path_all function
+
+* algo_floyd_warshall.cpp
+    * The implementation of floyd_warshall algorithm
+
+* algo_djikstra.cpp
+    * The implementation of djikstra algorithm
+    
+* algo_bellman_ford
+    * The implementation of bellman_ford algorithm
+
+* algo.h
+    * The prototype of the generic algorithm methods.
+
+* algo.cpp
+    * Contains the most efficient algorithm (djikstra)
+
+* Other mentions
+    * I inspired from https://www.geeksforgeeks.org/bellman-ford-algorithm-simple-implementation/
+        for the implementation of the bellman_ford algorithm
+    * I inspired from https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/
+        for the implementation of the djikstra algorithm
